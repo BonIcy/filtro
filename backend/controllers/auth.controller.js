@@ -1,6 +1,5 @@
 let { response } = require('express');
 let Camper = require('../models/Camper'); 
-let bcryptjs = require('bcryptjs');
 let { generateJWT } = require('../middlewares/generateJwt');
 let login = async (req, res = response) => {
     let { email, password } = req.body;
@@ -15,7 +14,7 @@ let login = async (req, res = response) => {
             return res.status(400).json({ msg: "Estado inactivo" });
         }
         
-        let validPassword = bcryptjs.compareSync(password, camper.password);
+        let validPassword = (password, camper.password);
         if (!validPassword) {
             return res.status(400).json({ msg: "Contraseña incorrecta" });
         }

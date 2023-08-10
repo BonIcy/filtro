@@ -1,5 +1,6 @@
 let { body, validationResult } = require('express-validator');
-
+let mongoose = require('mongoose');
+let Level = require('../models/Level')
 exports.validateLevelPosting = [
     body('nombre', 'El nombre del nivel es obligatorio').notEmpty(),
     (req, res, next) => {
@@ -25,7 +26,7 @@ exports.validateLevelUpdate = [
         next();
     },
     (req, res, next) => {
-        if (req.user.rol !== 'camperRol' && req.user.rol !== 'trainerRol') {
+        if (req.camper && req.camper.rol !== 'camperRol' && req.camper && req.camper.rol !== 'trainerRol') {
             return res.status(403).json({ message: 'Acceso no autorizado' });
         }
         next();

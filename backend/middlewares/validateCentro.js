@@ -9,10 +9,9 @@ exports.validateCentroPosting = [
             return res.status(400).json({ errors: errors.array() });
         }
 
-        if (req.user.rol !== 'gerenteRol') {
+        if (req.camper && req.camper.rol !== 'gerenteRol') {
             return res.status(403).json({ message: 'Acceso no autorizado' });
         }
-
         next();
     }
 ];

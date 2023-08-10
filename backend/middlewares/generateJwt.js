@@ -15,7 +15,6 @@ let generateJWT =  (uid= '') =>{
         })
     })
 }
-
 module.exports = {
     generateJWT
 }

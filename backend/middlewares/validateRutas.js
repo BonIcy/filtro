@@ -14,7 +14,7 @@ exports.validateRutaPosting = [
 ];
 
 exports.validateDeletePermissions = (req, res, next) => {
-    if (req.user.rol === 'gerenteRol') {
+    if (req.camper && req.camper.rol !== 'gerenteRol') {
         next();
     } else {
         res.status(403).json({ message: 'Acceso no autorizado' });
@@ -22,7 +22,7 @@ exports.validateDeletePermissions = (req, res, next) => {
 };
 
 exports.validateUpdatePermissions = (req, res, next) => {
-    if (req.user.rol === 'trainerRol') {
+    if (req.camper && req.camper.rol !== 'trainerRol') {
         next();
     } else {
         res.status(403).json({ message: 'Acceso no autorizado' });

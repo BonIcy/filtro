@@ -4,8 +4,8 @@ let roleSchema = new mongoose.Schema({
   rol: { 
     type: String, 
     required: true,
-    enum: ['GERENTE', 'TRAINER', 'CAMPER'],
-    default: ['CAMPER'] 
+    enum: ['gerenteRol', 'trainterRol', 'camperRol'],
+    default: ['camperRol'] 
     },
 });
 

@@ -21,23 +21,14 @@ exports.validateCamperPosting = [
             return res.status(400).json({ errors: errors.array() });
         }
 
-        if (req.user.rol !== 'gerenteRol') {
-            return res.status(403).json({ message: 'Acceso no autorizado' });
-        }
-
-        if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-            return res.status(400).json({ message: 'ID no válido' });
-        }
-
-        let existingCamper = await Camper.findById(req.params.id);
-        if (!existingCamper) {
-            return res.status(404).json({ message: 'Camper no encontrado' });
+        if ( req.camper && req.camper.rol !== 'gerenteRol') {
+            return res.status(403).json({ message: 'Acceso no autorizado'});
         }
         next();
     }
 ];
 exports.validateDeletePermissions = async (req, res, next) => {
-    if (req.user.rol === 'gerenteRol') {
+    if (req.camper && req.camper.rol !== 'gerenteRol') {
         let existingCamper = await Camper.findById(req.params.id);
         if (!existingCamper) {
             return res.status(404).json({ message: 'Camper no encontrado' });
@@ -48,19 +39,11 @@ exports.validateDeletePermissions = async (req, res, next) => {
     }
 };
 exports.validateUpdatePermissions = async (req, res, next) => {
-    if (req.user.rol === 'gerenteRol' || req.user.rol === 'trainerRol') {
+    if (req.camper && req.camper.rol !== 'gerenteRol' || req.camper && req.camper.rol !== 'trainerRol') {
         let existingCamper = await Camper.findById(req.params.id);
         if (!existingCamper) {
             return res.status(404).json({ message: 'Camper no encontrado' });
         }
-        next();
-    } else {
-        res.status(403).json({ message: 'Acceso no autorizado' });
-    }
-};
-
-exports.checkTrainerRole = (req, res, next) => {
-    if (req.user && req.user.rol === 'trainerRol') {
         next();
     } else {
         res.status(403).json({ message: 'Acceso no autorizado' });

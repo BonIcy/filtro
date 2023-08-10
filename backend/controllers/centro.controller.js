@@ -3,10 +3,16 @@ let { validationResult } = require('express-validator');
 let mongoose = require('mongoose');
 
 exports.postCentro = async (req, res) => {
-    let { nombre } = req.body;
+    let { nombre, descripción, estado, ciudad } = req.body;
 
     try {
-        let nuevoCentro = new Centro({ nombre });
+        let nuevoCentro = new Centro({
+            nombre,
+            descripción,
+            estado,
+            ciudad
+        });
+
         await nuevoCentro.save();
 
         res.json(nuevoCentro);
