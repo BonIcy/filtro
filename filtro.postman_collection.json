@@ -1,0 +1,580 @@
+{
+	"info": {
+		"_postman_id": "30004797-068d-4f8e-9191-0d04e9d11425",
+		"name": "filtro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28464468"
+	},
+	"item": [
+		{
+			"name": "auth login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"andres@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5992/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post centro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MjU3MDksImV4cCI6MTY5MTYzMjkwOX0.vdcTlYennAOUl0ckcqfTHdFNg7piLikI0k48vkzIeAg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Centro de Entrenamiento de alto nivel\",\r\n    \"descripción\": \"Un centro enfocado en el backend\",\r\n    \"estado\": \"Activo\",\r\n    \"ciudad\": \"Bucaramanga\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5992/api/centros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"centros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get centros",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQzYjkwNTE0Mzg1OGM5ODlkNjA3NDIiLCJpYXQiOjE2OTE2MjUwMjYsImV4cCI6MTY5MTYzMjIyNn0.A4Ee1-sV0cNY9tFPsPWmhl8KtgxmDGBOe79-YeDKAHU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5992/api/centros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"centros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update centro",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MjU3MDksImV4cCI6MTY5MTYzMjkwOX0.vdcTlYennAOUl0ckcqfTHdFNg7piLikI0k48vkzIeAg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Centro de entrenamiento de alto nivel\",\r\n    \"descripción\": \"Un centro enfocado en el backend\",\r\n    \"estado\": \"Activo\",\r\n    \"ciudad\": \"Bucaramanga\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5992/api/centros/64d4330804f7804ed1e4c169",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"centros",
+						"64d4330804f7804ed1e4c169"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete centro",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MjU3MDksImV4cCI6MTY5MTYzMjkwOX0.vdcTlYennAOUl0ckcqfTHdFNg7piLikI0k48vkzIeAg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5992/api/centros/64d435bc04f7804ed1e4c173",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"centros",
+						"64d435bc04f7804ed1e4c173"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post ruta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MjU3MDksImV4cCI6MTY5MTYzMjkwOX0.vdcTlYennAOUl0ckcqfTHdFNg7piLikI0k48vkzIeAg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"React + Vue\",\r\n    \"centro\": \"64d4330804f7804ed1e4c169\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5992/api/rutas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"rutas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get rutas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MjU3MDksImV4cCI6MTY5MTYzMjkwOX0.vdcTlYennAOUl0ckcqfTHdFNg7piLikI0k48vkzIeAg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5992/api/rutas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"rutas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update ruta",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MjU3MDksImV4cCI6MTY5MTYzMjkwOX0.vdcTlYennAOUl0ckcqfTHdFNg7piLikI0k48vkzIeAg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"React + Node + Vue\",\r\n    \"centro\": \"64d4330804f7804ed1e4c169\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5992/api/rutas/64d4398004f7804ed1e4c17f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"rutas",
+						"64d4398004f7804ed1e4c17f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete ruta",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MjU3MDksImV4cCI6MTY5MTYzMjkwOX0.vdcTlYennAOUl0ckcqfTHdFNg7piLikI0k48vkzIeAg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5992/api/rutas/64d43c6d9a3e85ea681599b3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"rutas",
+						"64d43c6d9a3e85ea681599b3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload img",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MjU3MDksImV4cCI6MTY5MTYzMjkwOX0.vdcTlYennAOUl0ckcqfTHdFNg7piLikI0k48vkzIeAg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/jrey2/Documents/mme/363313725_2416220561893069_3642784840780229770_n.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5992/api/uploads/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"uploads",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post level",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MjU3MDksImV4cCI6MTY5MTYzMjkwOX0.vdcTlYennAOUl0ckcqfTHdFNg7piLikI0k48vkzIeAg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"level1\",\r\n    \"ruta\": \"64d4398004f7804ed1e4c17f\",\r\n    \"duración\":\"3 semanas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5992/api/levels/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"levels",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get levels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5992/api/levels/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"levels",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update level (no funciona)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MzI5MzksImV4cCI6MTY5MTY0MDEzOX0.heHFfAFxfPMkutylRToceait9vpDZOpS0JD-YSE8WaU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"level 1\",\r\n    \"ruta\": \"64d4398004f7804ed1e4c17f\",\r\n    \"duración\":\"4 semanas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5992/api/levels/64d440ad9a3e85ea681599ba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"levels",
+						"64d440ad9a3e85ea681599ba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete level",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MzI5MzksImV4cCI6MTY5MTY0MDEzOX0.heHFfAFxfPMkutylRToceait9vpDZOpS0JD-YSE8WaU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5992/api/levels/64d44541da8b291e64d3d6d9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"levels",
+						"64d44541da8b291e64d3d6d9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post camper/user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0Mjg0NDM1OWVlODljYjhlZjA5OWMiLCJpYXQiOjE2OTE2MzI5MzksImV4cCI6MTY5MTY0MDEzOX0.heHFfAFxfPMkutylRToceait9vpDZOpS0JD-YSE8WaU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Vermen\",\r\n  \"típoIdentificacion\": \"C.C\",\r\n  \"NroIdentificacion\": \"1234567899\",\r\n  \"email\": \"vermen@gmail.com\",\r\n  \"password\": \"12345678\",\r\n  \"estado\": true,\r\n  \"level\": \"64d440ad9a3e85ea681599ba\",\r\n  \"levelState\": \"Completed\",\r\n  \"imagen\": \"vermen.jpg\",\r\n  \"rol\": \"64d428bdb0638bd5e669dc2b\",\r\n  \"promedio\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5992/api/campers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"campers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get campers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0NGIxNWM4NjE4OTZhYjcyMjQyODEiLCJpYXQiOjE2OTE2MzQ0OTAsImV4cCI6MTY5MTY0MTY5MH0.frvP4JNuR7pO5O7BFKiE3S-ysDKu9EFZaKReuhWNhDc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5992/api/campers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"campers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update camper (no funciona)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0NGIxNWM4NjE4OTZhYjcyMjQyODEiLCJpYXQiOjE2OTE2MzQ0OTAsImV4cCI6MTY5MTY0MTY5MH0.frvP4JNuR7pO5O7BFKiE3S-ysDKu9EFZaKReuhWNhDc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"64d42844359ee89cb8ef099c\",\r\n        \"nombre\": \"Andres\",\r\n        \"típoIdentificacion\": \"C.C\",\r\n        \"NroIdentificacion\": 1234567890,\r\n        \"email\": \"andres@gmail.com\",\r\n        \"password\": \"12345678\",\r\n        \"estado\": true,\r\n        \"level\": \"64d440ad9a3e85ea681599ba\",\r\n        \"levelState\": \"Completed\",\r\n        \"imagen\": \"andres.jpg\",\r\n        \"rol\": \"64d428abb0638bd5e669dc2a\",\r\n        \"promedio\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5992/api/campers/64d42844359ee89cb8ef099c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"campers",
+						"64d42844359ee89cb8ef099c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete camper",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-token-jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGQ0NGIxNWM4NjE4OTZhYjcyMjQyODEiLCJpYXQiOjE2OTE2MzQ0OTAsImV4cCI6MTY5MTY0MTY5MH0.frvP4JNuR7pO5O7BFKiE3S-ysDKu9EFZaKReuhWNhDc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5992/api/campers/64d42844359ee89cb8ef099c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5992",
+					"path": [
+						"api",
+						"campers",
+						"64d42844359ee89cb8ef099c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
